@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Indu's Task Planner</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- =================================
+             HEADER
+        ================================== -->
+
+        <header class="app-header">
+
+            <div class="brand-area">
+
+                <div class="brand-icon">
+                    🌿
+                </div>
+
+                <div>
+
+                    <h1>
+                        Indu's Task Planner
+                    </h1>
+
+                    <p>
+                        Plan it. Do it. Feel accomplished.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="planner-badge">
+                ✨ Stay Productive
+            </div>
+
+        </header>
+
+
+        <!-- =================================
+             TODAY'S FOCUS
+        ================================== -->
+
+        <section class="motivation-card">
+
+            <div>
+
+                <span class="small-label">
+                    TODAY'S FOCUS
+                </span>
+
+                <h2 id="motivationText">
+                    Let's make today a beautiful day! ☀️
+                </h2>
+
+                <p id="dateDisplay"></p>
+
+            </div>
+
+            <div class="motivation-icon">
+                ☀️
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             PROGRESS
+        ================================== -->
+
+        <section class="progress-card">
+
+            <div class="progress-top">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR PROGRESS
+                    </span>
+
+                    <h3 id="progressText">
+                        0% completed
+                    </h3>
+
+                </div>
+
+                <div class="progress-circle">
+
+                    <span id="progressPercent">
+                        0%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill">
+                </div>
+
+            </div>
+
+
+            <p id="progressMessage">
+                Start your first task and build momentum. 🌱
+            </p>
+
+        </section>
+
+
+        <!-- =================================
+             ADD TASK
+        ================================== -->
+
+        <section class="add-task-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PLAN YOUR DAY
+                    </span>
+
+                    <h2>
+                        Add a New Task
+                    </h2>
+
+                </div>
+
+                <span class="heading-icon">
+                    📝
+                </span>
+
+            </div>
+
+
+            <div class="task-input-area">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you want to accomplish?"
+                    maxlength="100"
+                >
+
+
+                <div class="date-time-row">
+
+                    <div class="field-group">
+
+                        <label for="taskDate">
+                            📅 Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="taskDate"
+                        >
+
+                    </div>
+
+
+                    <div class="field-group">
+
+                        <label for="taskTime">
+                            ⏰ Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="taskTime"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="addTaskButton"
+                    class="add-task-button">
+
+                    <span>＋</span>
+                    Add Task
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             TASK LIST
+        ================================== -->
+
+        <section class="tasks-section">
+
+            <div class="tasks-header">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR TASKS
+                    </span>
+
+                    <h2>
+                        Task List
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="clearCompleted"
+                    class="clear-button">
+
+                    Clear Completed
+
+                </button>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="filter-buttons">
+
+                <button
+                    class="filter-button active"
+                    data-filter="all">
+
+                    All
+                    <span id="allCount">0</span>
+
+                </button>
+
+
+                <button
+                    class="filter-button"
+                    data-filter="pending">
+
+                    Pending
+                    <span id="pendingCount">0</span>
+
+                </button>
+
+
+                <button
+                    class="filter-button"
+                    data-filter="completed">
+
+                    Completed
+                    <span id="completedCount">0</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- TASK LIST -->
+
+            <div
+                id="taskList"
+                class="task-list">
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                id="emptyState"
+                class="empty-state">
+
+                <div class="empty-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Your task list is waiting for you
+                </h3>
+
+                <p>
+                    Add something meaningful and make progress today.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer class="app-footer">
+
+            <p>
+                Made with 💚 by
+                <strong>Indu</strong>
+            </p>
+
+            <span>
+                Keep going. One task at a time. ✨
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

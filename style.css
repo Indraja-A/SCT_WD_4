@@ -1,0 +1,1057 @@
+/* ==========================================
+   INDU'S TASK PLANNER
+   SKILLCRAFT TECHNOLOGY - TASK 04
+   ========================================== */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    padding: 30px 15px;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff7e8,
+            #e9e2ff,
+            #fff3d6
+        );
+
+    color: #26352c;
+
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+.app-container {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.app-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.brand-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.brand-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 22px
+        rgba(70, 90, 70, 0.10);
+
+    font-size: 25px;
+
+}
+
+
+.brand-area h1 {
+
+    font-size: 28px;
+
+    color: #294536;
+
+}
+
+
+.brand-area p {
+
+    margin-top: 4px;
+
+    color: #708077;
+
+    font-size: 13px;
+
+}
+
+
+.planner-badge {
+
+    padding: 9px 13px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #58705f;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   COMMON CARDS
+   ========================================== */
+
+.motivation-card,
+.progress-card,
+.add-task-card,
+.tasks-section {
+
+    background:
+        rgba(255, 255, 255, 0.86);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(60, 80, 60, 0.08);
+
+}
+
+
+/* ==========================================
+   TODAY'S FOCUS
+   ========================================== */
+
+.motivation-card {
+
+    padding: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7fff9,
+            #f5f1ff
+        );
+
+}
+
+
+.small-label,
+.section-label {
+
+    display: block;
+
+    color: #789083;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.motivation-card h2 {
+
+    font-size: 22px;
+
+    color: #31473a;
+
+    line-height: 1.35;
+
+}
+
+
+#dateDisplay {
+
+    margin-top: 7px;
+
+    color: #829187;
+
+    font-size: 13px;
+
+}
+
+
+.motivation-icon {
+
+    font-size: 48px;
+
+}
+
+
+/* ==========================================
+   PROGRESS CARD
+   ========================================== */
+
+.progress-card {
+
+    padding: 22px;
+
+    margin-bottom: 16px;
+
+}
+
+
+.progress-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.progress-top h3 {
+
+    color: #344c3c;
+
+    font-size: 18px;
+
+}
+
+
+.progress-circle {
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff7e8,
+            #e6ddff
+        );
+
+    color: #4d6955;
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 10px;
+
+    margin-top: 17px;
+
+    background: #edf0ec;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #74c69d,
+            #8f7bea
+        );
+
+    transition: width 0.4s ease;
+
+}
+
+
+.progress-card p {
+
+    margin-top: 10px;
+
+    color: #7f8d84;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   ADD TASK CARD
+   ========================================== */
+
+.add-task-card {
+
+    padding: 23px;
+
+    margin-bottom: 16px;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+
+}
+
+
+.section-heading h2,
+.tasks-header h2 {
+
+    color: #304638;
+
+    font-size: 20px;
+
+}
+
+
+.heading-icon {
+
+    font-size: 25px;
+
+}
+
+
+.task-input-area {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+}
+
+
+#taskInput {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid #dfe6df;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #fcfdfc;
+
+    color: #314238;
+
+    font-size: 14px;
+
+}
+
+
+#taskInput:focus {
+
+    border-color: #95c7a7;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(116, 198, 157, 0.12);
+
+}
+
+
+.date-time-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+}
+
+
+.field-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.field-group label {
+
+    color: #75857b;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.field-group input {
+
+    height: 45px;
+
+    padding: 0 11px;
+
+    border: 1px solid #dfe6df;
+
+    border-radius: 11px;
+
+    background: #fcfdfc;
+
+    color: #384a3e;
+
+    outline: none;
+
+}
+
+
+.field-group input:focus {
+
+    border-color: #95c7a7;
+
+}
+
+
+/* ==========================================
+   ADD TASK BUTTON
+   ========================================== */
+
+.add-task-button {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #69b98e,
+            #8172d8
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px
+        rgba(91, 130, 107, 0.17);
+
+    transition: 0.2s;
+
+}
+
+
+.add-task-button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ==========================================
+   TASK SECTION
+   ========================================== */
+
+.tasks-section {
+
+    padding: 23px;
+
+}
+
+
+.tasks-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.clear-button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #aa756f;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.clear-button:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================
+   FILTER BUTTONS
+   ========================================== */
+
+.filter-buttons {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin: 17px 0;
+
+}
+
+
+.filter-button {
+
+    border: 1px solid #dce4dd;
+
+    background: #f8faf8;
+
+    color: #68786e;
+
+    padding: 9px 13px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.filter-button span {
+
+    margin-left: 4px;
+
+    font-weight: 700;
+
+}
+
+
+.filter-button.active {
+
+    background: #e1f3e7;
+
+    border-color: #b9ddc5;
+
+    color: #476452;
+
+}
+
+
+/* ==========================================
+   TASK LIST
+   ========================================== */
+
+.task-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+
+}
+
+
+.task-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border: 1px solid #e3e9e4;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    transition: 0.2s;
+
+}
+
+
+.task-item:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 18px
+        rgba(60, 80, 60, 0.06);
+
+}
+
+
+.task-item.completed {
+
+    background: #f4f8f5;
+
+}
+
+
+/* ==========================================
+   COMPLETE BUTTON
+   ========================================== */
+
+.complete-button {
+
+    width: 25px;
+
+    height: 25px;
+
+    min-width: 25px;
+
+    border: 2px solid #b9c7bd;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13px;
+
+}
+
+
+.task-item.completed
+.complete-button {
+
+    border-color: #78b68e;
+
+    background: #78b68e;
+
+}
+
+
+/* ==========================================
+   TASK CONTENT
+   ========================================== */
+
+.task-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.task-title {
+
+    color: #34453a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+
+}
+
+
+.task-item.completed
+.task-title {
+
+    color: #929d95;
+
+    text-decoration: line-through;
+
+}
+
+
+.task-details {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 7px;
+
+}
+
+
+.task-detail {
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    background: #f0f5f1;
+
+    color: #77857c;
+
+    font-size: 10px;
+
+}
+
+
+/* ==========================================
+   TASK ACTIONS
+   ========================================== */
+
+.task-actions {
+
+    display: flex;
+
+    gap: 6px;
+
+}
+
+
+.action-button {
+
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #f0f3f0;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.action-button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+.edit-button:hover {
+
+    background: #eee9ff;
+
+}
+
+
+.delete-button:hover {
+
+    background: #ffe9e7;
+
+}
+
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.empty-state {
+
+    text-align: center;
+
+    padding: 35px 15px;
+
+}
+
+
+.empty-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.empty-state h3 {
+
+    color: #506357;
+
+    font-size: 16px;
+
+}
+
+
+.empty-state p {
+
+    color: #8b9890;
+
+    font-size: 12px;
+
+    margin-top: 6px;
+
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.app-footer {
+
+    text-align: center;
+
+    padding: 20px 5px 5px;
+
+}
+
+
+.app-footer p {
+
+    color: #748279;
+
+    font-size: 12px;
+
+}
+
+
+.app-footer strong {
+
+    color: #526f5b;
+
+}
+
+
+.app-footer span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #96a29a;
+
+    font-size: 11px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 18px 10px;
+
+    }
+
+
+    .app-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .brand-area h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .planner-badge {
+
+        display: none;
+
+    }
+
+
+    .motivation-card {
+
+        padding: 20px;
+
+    }
+
+
+    .motivation-card h2 {
+
+        font-size: 18px;
+
+    }
+
+
+    .motivation-icon {
+
+        font-size: 38px;
+
+    }
+
+
+    .add-task-card,
+    .tasks-section,
+    .progress-card {
+
+        padding: 18px;
+
+    }
+
+
+    .tasks-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .clear-button {
+
+        font-size: 11px;
+
+    }
+
+
+    .task-item {
+
+        align-items: flex-start;
+
+    }
+
+
+    .task-actions {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .date-time-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .filter-buttons {
+
+        flex-wrap: wrap;
+
+    }
+
+}
